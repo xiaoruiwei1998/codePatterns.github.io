@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Code Debugging</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle" style="color: black;">📋 Student Code History Debugging </i> </div>
+  </header>
+
+  <div class="l-navbar" id="nav-bar">
+    <nav class="nav">
+        <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">IntelligenTA</span> </a>
+            <div class="nav_list"> 
+              <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Description</span> </a>
+              <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Test Cases</span> </a> 
+        </div> 
+    </nav>
+  </div>
+
+  <div>
+    <div class="container">
+      <!-- 1. Check boxes for edit history -->
+      <div class="row checkbox-row" id="show-edits-checkbox">
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="stu-checkbox" checked>
+                Student's Edits
+              </label>
+            </div>
+          </div>
+          
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="cor-checkbox" checked>
+                Correction's Edits
+              </label>
+            </div>
+          </div>
+      </div>
+
+      <!-- 2. Correct Edits -->
+      <div class="row" id="code-history-snapshot"></div>
+
+      <!-- 3. Student's Edits -->
+      <div class="row" id="student-edits"></div>
+
+      <!-- 4. How close to correct answer-->
+      <div class="row" id="distance-to-correct-answer"></div>
+
+      <!-- 5. subtitles-->
+      <div class="row" id="subtitles">
+        <div class="col">This Submission</div>
+        <div class="col">Bugs (per edit or per fix?)</div>
+        <div class="col">Student's Changes</div>
+      </div>
+
+      <div class="row" id="code">
+        <div class="col" id="one-snapshot">placeholder</div>
+        <div class="col">
+          <ol id="bugs">
+          </ol> 
+        </div>
+        <div class="col">
+          <ol id="changes">
+          </ol> 
+        </div>
+      </div>
+
+        <div class="row" id="debug">
+          <div class="col" id="test-cases">
+            <!-- passed test case -->
+            <button id="test1" type="button" class="btn btn-success"> howManyEggCartons(23)</button><br><br>
+            <!-- Incorrect test case -->
+            <button id="test2" type="button" class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapseExample"> howManyEggCartons(24)</button><br><br>
+            <div class="collapse unit-test-collapse" id="collapse2">
+              <div class="card card-body card-unit-test">
+                <p class="unit-test-student-output">Student's Output: 3</p>
+                <p class="unit-test-correct-output">Correct Output: 2</p>
+              </div>
+            </div>
+            <button id="test3" type="button" class="btn btn-danger" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapseExample"> howManyEggCartons(1)</button><br><br>
+            <div class="collapse unit-test-collapse" id="collapse3">
+              <div class="card card-body card-unit-test">
+                <p class="unit-test-student-output">Student's Output: 0</p>
+                <p class="unit-test-correct-output">Correct Output: 1</p>
+              </div>
+            </div>
+            <button id="test4" type="button" class="btn btn-secondary"> howManyEggCartons(eggs)</button><br><br>
+            
+            
+            
+          </div>
+
+          <div class="col" id="python-tutor">
+            <iframe id="python-tutor-frame" width="500" height="800" frameborder="0"
+              src="http://pythontutor.com/iframe-embed.html#code=def+howManyEggCartons%28eggs%29%3A%0D%0A++++if+eggs+%2F%2F+12+%25+12+%3D%3D+0%3A%0D%0A++++++++return+eggs+%2F%2F+12%0D%0A++++else%3A%0D%0A++++++++return+eggs+%2F%2F+12+%2B+1%0D%0A%0D%0AhowManyEggCartons%281%29&cumulative=true&py=3&curInstr=0&verticalStack=true"> 
+            </iframe>
+          </div>
+
+          <div class="col" id="python-tutor-correct">
+            <iframe id="python-tutor-frame-correct" width="500" height="800" frameborder="0"
+              src="http://pythontutor.com/iframe-embed.html#code=def+howManyEggCartons%28eggs%29%3A%0D%0A++++if+eggs+%25+12+%3D%3D+0%3A%0D%0A++++++++return+eggs+%2F%2F+12%0D%0A++++else%3A%0D%0A++++++++return+eggs+%2F%2F+12+%2B+1%0D%0A%0D%0AhowManyEggCartons%281%29&cumulative=true&py=3&curInstr=0&verticalStack=true"> 
+            </iframe>
+          </div>
+        
+        </div>
+    </div>
+  </div>
+
+  
+  
+    
+
+    
+</body>
+
+<!-- Load JS libraries -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/d3-tip/index.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<script src="js/main.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/codeHistorySnapshot.js"></script>
+<script src="js/runTestCases.js"></script>
+<script src="js/bugsTracing.js"></script>
+
+</html>

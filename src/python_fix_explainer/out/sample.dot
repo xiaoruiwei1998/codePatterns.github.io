@@ -1,0 +1,61 @@
+
+                        digraph G
+                        {
+                            samplea3e83bcc2c0f [label="Module"];
+sample82c6f982b48b [label="NodeList: body of Module"];
+samplef2e4f8bc85b9 [label="FunctionDef name: kthDigit"];
+sample210630f8a14c [label="arguments"];
+sample868db20697fb [label="NodeList: args of arguments"];
+sampleba8fbe43a26c [label="arg(arg = x)"];
+sample868db20697fb -> sampleba8fbe43a26c [label="0"];
+sample5ad884f37950 [label="arg(arg = k)"];
+sample868db20697fb -> sample5ad884f37950 [label="1"];
+sample210630f8a14c -> sample868db20697fb [label="args"];
+samplef2e4f8bc85b9 -> sample210630f8a14c [label="args"];
+sample2a7755ead8b3 [label="NodeList: body of FunctionDef"];
+samplec3db82b05385 [label="Assign"];
+sample70a04d661e32 [label="NodeList: targets of Assign"];
+sampled45bdd5cfe9e [label="Store identifier kthDigLeft"];
+sample70a04d661e32 -> sampled45bdd5cfe9e [label="0"];
+samplec3db82b05385 -> sample70a04d661e32 [label="targets"];
+samplef17dbd3b6587 [label="BinOp %"];
+sample133a0e2ee950 [label="Load identifier x"];
+samplef17dbd3b6587 -> sample133a0e2ee950 [label="left"];
+samplebdf33cabe0f1 [label="BinOp **"];
+sample36fd22c9c2c4 [label="Constant(value = 10)"];
+samplebdf33cabe0f1 -> sample36fd22c9c2c4 [label="left"];
+sample038004895a22 [label="BinOp +"];
+sampled228e0c68e34 [label="Load identifier k"];
+sample038004895a22 -> sampled228e0c68e34 [label="left"];
+sample44cd50ba6cee [label="Constant(value = 1)"];
+sample038004895a22 -> sample44cd50ba6cee [label="right"];
+samplebdf33cabe0f1 -> sample038004895a22 [label="right"];
+samplef17dbd3b6587 -> samplebdf33cabe0f1 [label="right"];
+samplec3db82b05385 -> samplef17dbd3b6587 [label="value"];
+sample2a7755ead8b3 -> samplec3db82b05385 [label="0"];
+samplebabbfb025b09 [label="Assign"];
+sample0d6199e7f093 [label="NodeList: targets of Assign"];
+sample46758265665b [label="Store identifier kthDigRight"];
+sample0d6199e7f093 -> sample46758265665b [label="0"];
+samplebabbfb025b09 -> sample0d6199e7f093 [label="targets"];
+sample7cae9ffe87d4 [label="BinOp //"];
+sample3ee2205f7ae7 [label="Load identifier kthDigLeft"];
+sample7cae9ffe87d4 -> sample3ee2205f7ae7 [label="left"];
+sample3f126eec3160 [label="BinOp **"];
+sample69c8b617a5c7 [label="Constant(value = 10)"];
+sample3f126eec3160 -> sample69c8b617a5c7 [label="left"];
+samplebf7471eddc49 [label="Load identifier k"];
+sample3f126eec3160 -> samplebf7471eddc49 [label="right"];
+sample7cae9ffe87d4 -> sample3f126eec3160 [label="right"];
+samplebabbfb025b09 -> sample7cae9ffe87d4 [label="value"];
+sample2a7755ead8b3 -> samplebabbfb025b09 [label="1"];
+sample85f1df698c2b [label="Return"];
+sample14a64504dc4b [label="Load identifier kthDigRight"];
+sample85f1df698c2b -> sample14a64504dc4b [label="value"];
+sample2a7755ead8b3 -> sample85f1df698c2b [label="2"];
+samplef2e4f8bc85b9 -> sample2a7755ead8b3 [label="body"];
+sample82c6f982b48b -> samplef2e4f8bc85b9 [label="0"];
+samplea3e83bcc2c0f -> sample82c6f982b48b [label="body"];
+
+                        }
+                    

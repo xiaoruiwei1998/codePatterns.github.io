@@ -1,0 +1,86 @@
+,student,problem,student_solution,descriptors,corrections,corrected,edit_dist
+0,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    cartons = eggs // 12
+	return",['Syntax error'],[],,-1
+1,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    cartons = eggs // 12
+	return carton",['Syntax error'],[],,-1
+2,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    cartons = eggs // 12
+	return carton",['Syntax error'],[],,-1
+3,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    return eggs // 12","['10 / 11 AST nodes are ""structural"" ']",['change code:\n        return eggs // 12\nto:\n        return (eggs + 11) // 12\n    '],"def howManyEggCartons(eggs):
+    return (eggs + 11) // 12
+",3
+4,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    return eggs / 12","['""good"" changes from previous code (1 changes): \nUpdate node: eggs // 12\n\n', '10 / 11 AST nodes are ""structural"" ']",['change code:\n        return eggs / 12\nto:\n        return (eggs + 11) // 12\n    '],"def howManyEggCartons(eggs):
+    return (eggs + 11) // 12
+",4
+5,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    return eggs // 12.0","['""good"" changes from previous code (1 changes): \nUpdate node: eggs / 12\n\n', '""bad""(unexpected) changes from previous code (1 changes): \nUpdate node: 12\n\n', '10 / 11 AST nodes are ""structural"" ']","['change code:\n        return eggs // 12.0\nto:\n        return (eggs + 11) // 12\n    ', 'change code:\n        return eggs // 12.0\nto:\n        return (eggs + 11) // 12\n    ']","def howManyEggCartons(eggs):
+    return (eggs + 11) // 12
+",5
+6,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    return eggs // 13","['""good"" changes from previous code (1 changes): \nUpdate node: 12.0\n\n', '10 / 11 AST nodes are ""structural"" ']","['change code:\n        return eggs // 13\nto:\n        return (eggs + 11) // 12\n    ', 'change code:\n        return eggs // 13\nto:\n        return (eggs + 11) // 12\n    ']","def howManyEggCartons(eggs):
+    return (eggs + 11) // 12
+",5
+7,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    return eggs // 12","['""good"" changes from previous code (1 changes): \nUpdate node: 13\n\n', '10 / 11 AST nodes are ""structural"" ']",['change code:\n        return eggs // 12\nto:\n        return (eggs + 11) // 12\n    '],"def howManyEggCartons(eggs):
+    return (eggs + 11) // 12
+",3
+8,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    if (eggs // 12) % 12 == 0:
+        return eggs // 12
+    else:
+        return (eggs // 12) + 1","['changed approach?', '""good"" changes from previous code (2 changes): \ninsert code:\neggs\n\n', '""bad""(unexpected) changes from previous code (18 changes): \nmove code: return eggs // 12\n\ninsert code:\nif eggs // 12 % 12 == 0:\n    return eggs // 12\nelse:\n    return eggs // 12 + 1\n\n', '26 / 30 AST nodes are ""structural"" ']",['change code:\n        if eggs // 12 % 12 == 0:\nto:\n        if eggs % 12 == 0:\n    '],"def howManyEggCartons(eggs):
+    if eggs % 12 == 0:
+        return eggs // 12
+    else:
+        return eggs // 12 + 1
+",4
+9,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    if (eggs // 12) % 12 == 0:
+        return eggs // 12
+    if (eggs // 12) % 12 != 0
+        return (eggs // 12) + 1",['Syntax error'],[],,-1
+10,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    if (eggs // 12) % 12 == 0:
+        return eggs // 12
+    if (eggs // 12) % 12 != 0:
+        return (eggs // 12) + 1","['changed approach?', '""bad""(unexpected) changes from previous code (16 changes): \nmove code: eggs // 12 % 12 == 0\n\nmove code: return eggs // 12 + 1\n\nmove code: Eq\ndelete code:\nNodeList: orelse of If\ninsert code:\nif eggs // 12 % 12 != 0:\n    return eggs // 12 + 1\n\n', '27 / 41 AST nodes are ""structural"" ']","['change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 + 1\nto:\n        if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ', 'change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 + 1\nto:\n        if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ']","def howManyEggCartons(eggs):
+    if eggs % 12 == 0:
+        return eggs // 12
+    return eggs // 12 + 1
+",17
+11,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    if (eggs // 12) % 12 == 0:
+        return eggs // 12
+    if (eggs // 12) % 12 != 0:
+        return (eggs // 12) - 1","['changed approach?', '""bad""(unexpected) changes from previous code (1 changes): \nUpdate node: eggs // 12 + 1\n\n', '27 / 41 AST nodes are ""structural"" ']","['delete code:\nNotEq', 'change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 - 1\nto:\n        if eggs == 0:\n        return 0\n    if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ', 'change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 - 1\nto:\n        if eggs == 0:\n        return 0\n    if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ', 'move code:\neggs\n', 'insert code:\nEq', 'change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 - 1\nto:\n        if eggs == 0:\n        return 0\n    if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ', 'change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 - 1\nto:\n        if eggs == 0:\n        return 0\n    if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ', 'Update node: 12\n', 'Update node: eggs // 12 % 12\n']","def howManyEggCartons(eggs):
+    if eggs == 0:
+        return 0
+    if eggs % 12 == 0:
+        return eggs // 12
+    return eggs // 12 + 1
+",18
+12,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    if (eggs // 12) % 12 == 0:
+        return eggs // 12
+    if (eggs // 12) % 12 != 0:
+        return (eggs // 12) + 1","['changed approach?', '""good"" changes from previous code (1 changes): \nUpdate node: eggs // 12 - 1\n\n', '27 / 41 AST nodes are ""structural"" ']","['change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 + 1\nto:\n        if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ', 'change code:\n        if eggs // 12 % 12 == 0:\n        return eggs // 12\n    if eggs // 12 % 12 != 0:\n        return eggs // 12 + 1\nto:\n        if eggs % 12 == 0:\n        return eggs // 12\n    return eggs // 12 + 1\n    ']","def howManyEggCartons(eggs):
+    if eggs % 12 == 0:
+        return eggs // 12
+    return eggs // 12 + 1
+",17
+13,S049,howManyEggCartons,"def howManyEggCartons(eggs):
+    cartons = 0
+    if (eggs % 12) == 0:
+        cartons = eggs / 12
+    else:
+        cartons = (eggs // 12) + 1
+    return cartons","['changed approach?', '""good"" changes from previous code (14 changes): \nmove code: return eggs // 12 + 1\n\nmove code: eggs // 12 % 12 != 0\n\nmove code: eggs\n\nmove code: 12\n\ndelete code:\neggs // 12\n\ninsert code:\ncartons\n\n', '""bad""(unexpected) changes from previous code (20 changes): \nUpdate node: eggs // 12\n\nmove code: 0\n\nmove code: eggs // 12\n\nmove code: eggs // 12 + 1\n\nmove code: Eq\ndelete code:\nreturn eggs // 12\n\ninsert code:\ncartons = 0\n\n', '38 / 38 AST nodes are ""structural"" ']","['delete code:\ncartons = 0\n', 'change code:\n        cartons = 0\n    if eggs % 12 == 0:\n        cartons = eggs / 12\n    else:\n        cartons = eggs // 12 + 1\n    return cartons\nto:\n            return eggs // 12\n    else:\n        return eggs // 12 + 1\n    ', 'move code:\nreturn eggs // 12 + 1\n', 'change code:\n        cartons = 0\n    if eggs % 12 == 0:\n        cartons = eggs / 12\n    else:\n        cartons = eggs // 12 + 1\n    return cartons\nto:\n            return eggs // 12\n    else:\n        return eggs // 12 + 1\n    ', 'Update node: eggs / 12\n']","def howManyEggCartons(eggs):
+    if eggs % 12 == 0:
+        return eggs // 12
+    else:
+        return eggs // 12 + 1
+",16
